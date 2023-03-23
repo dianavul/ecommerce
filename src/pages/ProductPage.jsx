@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Spinner, Input, Row, Button, Badge } from "reactstrap";
-
 import ProductComponent from "../components/ProductComponent";
 import "./ProductPage.style.css";
 function ProductPage() {
@@ -115,7 +114,6 @@ function ProductPage() {
 										return (
 											<ProductComponent
 												id={prod.id}
-												category={prod.category}
 												title={prod.title}
 												price={prod.price}
 												image={prod.image}

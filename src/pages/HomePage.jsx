@@ -1,19 +1,13 @@
-import Navi from "../components/Navi";
-import ProductComponent from "../components/ProductComponent";
-import ProductPage from "./ProductPage";
-import { useState } from "react";
-import { Col } from "reactstrap";
+import Carou from "../components/Carou";
+import Category from "../components/Category";
+import TrendingProducts from "../components/TrendingProducts";
+
 function HomePage() {
-	const [prod, setProd] = useState([null]);
 	return (
 		<>
-			{prod.map((p, i) => {
-				return (
-					<Col key={"prod" + i} className='mt-3'>
-						<ProductPage prod={p} />
-					</Col>
-				);
-			})}
+			<Carou />
+			<Category />
+			<TrendingProducts />
 		</>
 	);
 }

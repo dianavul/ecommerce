@@ -1,0 +1,16 @@
+.searchbtn{
+    margin-left: 50px;
+}
+@media(max-width:320px){
+.page{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+.searchbtn{
+    width:75%;
+}
+.list{
+    width:100vw;
+}
+}

@@ -3,7 +3,7 @@ import HomePage from "/CURS/magazin/src/pages/HomePage";
 
 import Navi from "./components/Navi";
 import Foot from "./components/Foot";
-import SingleProd from "./components/SingleProd";
+
 import ProductComponent from "./components/ProductComponent";
 import ProductPage from "./pages/ProductPage";
 import WishListPage from "./pages/WishListPage";
@@ -15,7 +15,6 @@ function App() {
 		<div>
 			<Navi />
 			<Routes>
-				<Route path='/product/:id' element={<SingleProd />} />
 				<Route path='/products' element={<ProductPage />} />
 				<Route path='/wish' element={<WishListPage />} />
 				<Route path='/' element={<HomePage />} />

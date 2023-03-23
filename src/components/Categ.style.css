@@ -1,0 +1,21 @@
+.cont{
+   
+}
+@media (max-width:320px) {
+   .cont{
+     display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+   margin-left: -40px;
+   padding: 0;
+   }
+.pic{
+   width: 40vw;
+ 
+  
+}
+   
+  
+   
+   
+}

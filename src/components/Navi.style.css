@@ -1,0 +1,27 @@
+
+@media (max-width:320px){
+    .navi{
+        width: 100vw;
+        padding-top:10%;
+        padding-bottom: 5%;
+        
+        }
+  
+    .logo{
+        position: absolute;    
+        display: block;
+        top:0;
+        left:40%;
+      
+    }
+    .trademark{
+         position: absolute;    
+        display: block;
+        top:10px;
+        left:210px;
+    }
+    
+  
+   
+
+}

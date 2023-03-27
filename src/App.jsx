@@ -1,5 +1,5 @@
 import "./App.css";
-import HomePage from "/CURS/magazin/src/pages/HomePage";
+import HomePage from "./pages/HomePage";
 
 import Navi from "./components/Navi";
 import Foot from "./components/Foot";

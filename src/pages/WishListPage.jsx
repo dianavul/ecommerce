@@ -10,9 +10,10 @@ function WishlistPage() {
 	const [wishListProducts, setWishListProducts] = useState([]);
 
 	useEffect(() => {
-		const prodsString = localStorage.getItem("products");
+		const prodsString = localStorage.getItem("prods");
 		if (prodsString !== null) {
 			const prods = JSON.parse(prodsString);
+			console.log("products", prods);
 			setWishListProducts(prods);
 		}
 	}, []);
@@ -51,13 +52,13 @@ function WishlistPage() {
 				<h1> Go. Go fill it up with all your fashion hopes and dreams!</h1>
 			</div>
 			<h2>Wishlist</h2>
-			{wishListProducts.map((prod, index) => {
-				return (
-					<MDBTable>
-						<MDBTableBody>
+			<MDBTable>
+				<MDBTableBody>
+					{wishListProducts.map((prod, index) => {
+						return (
 							<tr key={index}>
 								<th scope='row'>{index + 1}</th>
-								<td>{prod}</td>
+								<td>{prod.title}</td>
 								<td></td>
 								<td>
 									<Button
@@ -70,10 +71,10 @@ function WishlistPage() {
 									</Button>
 								</td>
 							</tr>
-						</MDBTableBody>
-					</MDBTable>
-				);
-			})}
+						);
+					})}
+				</MDBTableBody>
+			</MDBTable>
 		</>
 	);
 }

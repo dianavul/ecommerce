@@ -10,7 +10,7 @@ import {
 	NavbarBrand,
 } from "reactstrap";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "/CURS/magazin/imgs/logo.png";
+// import logo from ";
 import "./Navi.style.css";
 
 function Navi(prod) {
@@ -71,7 +71,7 @@ function Navi(prod) {
 				<img
 					className='logo  '
 					alt='logos'
-					src={logo}
+					// src={logo}
 					style={{
 						height: "40px",
 						width: "90px",

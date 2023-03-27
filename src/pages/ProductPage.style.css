@@ -6,11 +6,12 @@
     display: flex;
     flex-wrap: wrap;
     width: 100vw;
+   
 }
-.searchbtn{
-    width:75%;
-}
+
 .list{
     width:100vw;
+   
 }
+
 }

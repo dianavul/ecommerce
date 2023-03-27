@@ -1,7 +1,8 @@
 import { Card, CardBody, CardTitle, CardText, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./ProductComponent.style.css";
-function ProductComponent({ image, price, title, product, id, category }) {
+
+function ProductComponent({ product }) {
 	const cardStyle = {
 		color: "#2d3032",
 		textDecoration: "none",
@@ -17,22 +18,22 @@ function ProductComponent({ image, price, title, product, id, category }) {
 	};
 
 	const addToWishList = () => {
-		const prodsString = localStorage.getItem("products");
+		const prodsString = localStorage.getItem("prods");
 
 		if (prodsString !== null) {
 			const prods = JSON.parse(prodsString);
-			const existNr = prods.find((prodElement) => {
+			const number = prods.find((prodElement) => {
 				return prodElement.id === product.id;
 			});
 
-			if (existNr === undefined) {
+			if (number === undefined) {
 				prods.push(product);
 			}
-			localStorage.setItem("products", JSON.stringify(prods));
+			localStorage.setItem("prods", JSON.stringify(prods));
 		} else {
 			const newProducts = [];
 			newProducts.push(product);
-			localStorage.setItem("products", JSON.stringify(newProducts));
+			localStorage.setItem("prods", JSON.stringify(newProducts));
 		}
 	};
 
@@ -50,7 +51,7 @@ function ProductComponent({ image, price, title, product, id, category }) {
 				<div style={{ height: "100%", width: "100%" }}>
 					<img
 						alt='Card cap'
-						src={`${image}`}
+						src={`${product.image}`}
 						style={{
 							width: "100%",
 							height: "380px",
@@ -61,20 +62,17 @@ function ProductComponent({ image, price, title, product, id, category }) {
 					/>
 
 					<CardBody>
-						<Link to={`/product/${id}`} style={cardStyle}>
-							<CardTitle tag='h5'>
-								{id}
-								{title}
-							</CardTitle>
+						<Link to={`/product/${product.id}`} style={cardStyle}>
+							<CardTitle tag='h5'>{product.title}</CardTitle>
 						</Link>
 					</CardBody>
 
 					<CardBody style={cardStyle}>
 						<CardText>
-							{price}
+							{product.price}
 							{dollar}
 						</CardText>
-						<CardText>{category}</CardText>
+						<CardText>{product.category}</CardText>
 
 						<Button
 							style={cartStyle}

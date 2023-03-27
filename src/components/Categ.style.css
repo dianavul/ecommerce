@@ -1,6 +1,4 @@
-.cont{
-   
-}
+
 @media (max-width:320px) {
    .cont{
      display: flex;

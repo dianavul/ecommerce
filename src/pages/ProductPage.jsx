@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { Spinner, Input, Row, Button, Badge } from "reactstrap";
 import ProductComponent from "../components/ProductComponent";
 import "./ProductPage.style.css";
@@ -10,7 +9,7 @@ function ProductPage() {
 	const [textInput, setTextInput] = useState("");
 	const [selectedCategory, setSelectedCategory] = useState(null);
 	useEffect(() => {
-		fetch(`https://fakestoreapi.com/products/`)
+		fetch(`https://fakestoreapi.com/products`)
 			.then((res) => res.json())
 			.then((prodListAPI) => setProdList(prodListAPI));
 		fetch(`https://fakestoreapi.com/products/categories`)
@@ -32,7 +31,7 @@ function ProductPage() {
 							marginRight: "15px",
 							backgroundImage:
 								"url(" +
-								"https://t3.ftcdn.net/jpg/05/72/19/34/240_F_572193465_P2OBTq7dte4YCmYxsa6bWk7jwAKySspX.jpg" +
+								"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiWxxWHcqAO1-Dj9f1H93ZKSSOBOjvWtEZmr8IZat9cvx2xxr7T6LNJokzpaPh1LbZ9c4&usqp=CAU" +
 								")",
 							backgroundPosition: "center",
 							backgroundSize: "cover",
@@ -97,7 +96,7 @@ function ProductPage() {
 						</div>
 
 						<div className='prod_list'>
-							<Row sm='4' className='p-5 ' style={{ width: "100%" }}>
+							<Row sm='4' className='row  '>
 								{prodList
 									.filter((prod) => {
 										return (
@@ -111,15 +110,7 @@ function ProductPage() {
 											.includes(textInput.toLowerCase());
 									})
 									.map((prod, index) => {
-										return (
-											<ProductComponent
-												id={prod.id}
-												title={prod.title}
-												price={prod.price}
-												image={prod.image}
-												key={index}
-											/>
-										);
+										return <ProductComponent product={prod} key={index} />;
 									})}
 							</Row>
 						</div>

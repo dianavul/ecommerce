@@ -42,33 +42,29 @@ function WishlistPage() {
 					</Link>
 				</Button>
 			</div>
-
+			<div className='empty_cart' style={{ textAlign: "center", margin: "5%" }}>
+				<MdOutlineRemoveShoppingCart
+					style={{
+						height: "25%",
+						width: "25%",
+					}}></MdOutlineRemoveShoppingCart>
+				<h1> Go. Go fill it up with all your fashion hopes and dreams!</h1>
+			</div>
 			<h2>Wishlist</h2>
-
 			{wishListProducts.map((prod, index) => {
-				<div
-					className='empty_cart'
-					style={{ textAlign: "center", margin: "5%" }}>
-					<MdOutlineRemoveShoppingCart
-						style={{
-							height: "25%",
-							width: "25%",
-						}}></MdOutlineRemoveShoppingCart>
-					<h1> OOPS! Your Wish List is empty!</h1>
-				</div>;
 				return (
 					<MDBTable>
 						<MDBTableBody>
 							<tr key={index}>
-								<th scope='row'>{index}</th>
-								<td></td>
+								<th scope='row'>{index + 1}</th>
+								<td>{prod}</td>
 								<td></td>
 								<td>
 									<Button
 										color='danger'
 										className='mt-2 ms-4'
 										onClick={() => {
-											onDelete(prod);
+											onDelete(prod.id);
 										}}>
 										DELETE
 									</Button>

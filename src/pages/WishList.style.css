@@ -6,3 +6,11 @@
     background-color: #00000000;
   
 }
+.total{
+    text-align: right;
+}
+@media(max-width:320px){
+    .titlu_prod{
+        display:none;
+    }
+}

@@ -8,12 +8,12 @@ import "./WishList.style.css";
 
 function WishlistPage() {
 	const [wishListProducts, setWishListProducts] = useState([]);
-
+	const productPrice = wishListProducts.reduce((a, i) => a + i.price, 0);
 	useEffect(() => {
 		const prodsString = localStorage.getItem("prods");
 		if (prodsString !== null) {
 			const prods = JSON.parse(prodsString);
-			console.log("products", prods);
+			console.log("prods", prods);
 			setWishListProducts(prods);
 		}
 	}, []);
@@ -21,7 +21,7 @@ function WishlistPage() {
 		const filteredProducts = wishListProducts.filter(
 			(prod) => prod.id !== prodId
 		);
-		localStorage.setItem("products", JSON.stringify(filteredProducts));
+		localStorage.setItem("prods", JSON.stringify(filteredProducts));
 		setWishListProducts(filteredProducts);
 	};
 	return (
@@ -43,24 +43,43 @@ function WishlistPage() {
 					</Link>
 				</Button>
 			</div>
-			<div className='empty_cart' style={{ textAlign: "center", margin: "5%" }}>
-				<MdOutlineRemoveShoppingCart
-					style={{
-						height: "25%",
-						width: "25%",
-					}}></MdOutlineRemoveShoppingCart>
-				<h1> Go. Go fill it up with all your fashion hopes and dreams!</h1>
+			<div>
+				{wishListProducts.length === 0 && (
+					<div
+						className='empty_cart'
+						style={{ textAlign: "center", margin: "5%" }}>
+						<MdOutlineRemoveShoppingCart
+							style={{
+								height: "25%",
+								width: "25%",
+							}}></MdOutlineRemoveShoppingCart>
+						<h1> Go. Go fill it up with all your fashion hopes and dreams!</h1>
+					</div>
+				)}
 			</div>
-			<h2>Wishlist</h2>
+
 			<MDBTable>
 				<MDBTableBody>
 					{wishListProducts.map((prod, index) => {
 						return (
 							<tr key={index}>
 								<th scope='row'>{index + 1}</th>
-								<td>{prod.title}</td>
-								<td></td>
 								<td>
+									<img
+										alt='Card cap'
+										src={`${prod.image}`}
+										style={{
+											width: "70px",
+											height: "70px",
+											padding: "0",
+											margin: "0",
+										}}
+										className='p-1'
+									/>
+								</td>
+								<td className='titlu_prod'>{prod.title}</td>
+								<td>{prod.price}$</td>
+								<td className='p-0'>
 									<Button
 										color='danger'
 										className='mt-2 ms-4'
@@ -75,6 +94,13 @@ function WishlistPage() {
 					})}
 				</MDBTableBody>
 			</MDBTable>
+			{wishListProducts.length !== 0 && (
+				<div className='d-flex p-0'>
+					<hr></hr>
+					<h3 className='col-8 total'>Total:</h3>
+					<h3>${productPrice}</h3>
+				</div>
+			)}
 		</>
 	);
 }

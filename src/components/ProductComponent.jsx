@@ -8,7 +8,7 @@ function ProductComponent({ product }) {
 		textDecoration: "none",
 		borderRadius: "none",
 	};
-	const dollar = " \u20AC";
+
 	const cartStyle = {
 		backgroundColor: "#f8f9fa",
 		textDecoration: "none",
@@ -68,10 +68,7 @@ function ProductComponent({ product }) {
 					</CardBody>
 
 					<CardBody style={cardStyle}>
-						<CardText>
-							{product.price}
-							{dollar}
-						</CardText>
+						<CardText>{product.price}$</CardText>
 						<CardText>{product.category}</CardText>
 
 						<Button

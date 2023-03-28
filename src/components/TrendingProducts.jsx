@@ -20,12 +20,7 @@ function TrendingProducts() {
 						{trendList.map((trend, index) => {
 							return (
 								<Col sm='2' className='product p-3' key={index}>
-									<ProductComponent
-										key={index}
-										image={trend.image}
-										title={trend.title}
-										price={trend.price}
-									/>
+									<ProductComponent key={index} product={trend} />
 								</Col>
 							);
 						})}

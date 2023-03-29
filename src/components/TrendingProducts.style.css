@@ -8,16 +8,27 @@ h2::before,h2::after{
 }
 h2{
     text-align: center;
+    
    
 }
 h4{
     text-align: center;
+   
 }
 .trend_container{
     display: flex;
     align-items: top;
     justify-content: space-between;
     
+}
+.special{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    height: 50px;
+}
+.product{
+    position: relative;
 }
 
 
@@ -35,8 +46,12 @@ h4{
  .product{
     display: flex;
     padding: 0;
+  
+  
 }
- 
+h2::before,h2::after{
+    display: none;
+}
 }
    
    

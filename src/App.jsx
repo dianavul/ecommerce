@@ -1,13 +1,9 @@
 import "./App.css";
 import HomePage from "./pages/HomePage";
-
 import Navi from "./components/Navi";
 import Foot from "./components/Foot";
-
-import ProductComponent from "./components/ProductComponent";
 import ProductPage from "./pages/ProductPage";
 import WishListPage from "./pages/WishListPage";
-
 import { Routes, Route } from "react-router-dom";
 
 function App() {

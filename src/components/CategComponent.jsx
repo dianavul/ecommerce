@@ -13,6 +13,7 @@ function CategComponent({ category }) {
 		display: "flex ",
 		flexDirection: "column",
 		justifyContent: "space-around",
+		paddingLeft: "15px",
 	};
 
 	const cartStyle = {
@@ -28,7 +29,7 @@ function CategComponent({ category }) {
 	return (
 		<>
 			<div className='cont'>
-				<Card color='light' style={cardStyle} className='cards m-2 '>
+				<Card color='light' style={cardStyle} className='cards m-1 '>
 					<CardBody style={cardStyle}>
 						<div className='d-flex flex-row '>
 							<div className='d-flex flex-column align-items-start justify-content-evenly'>

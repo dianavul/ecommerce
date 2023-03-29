@@ -13,8 +13,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "/CURS/magazin/imgs/logo.png";
 import "./Navi.style.css";
 
-function Navi(props) {
-	const { countCart } = props;
+function Navi() {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 	const toggle = () => setDropdownOpen(!dropdownOpen);
 	const divStyles = {
@@ -98,7 +97,6 @@ function Navi(props) {
 						}}
 					/>
 					Wish List
-					{countCart ? <button className='badge'>{countCart}</button> : ""}
 				</NavLink>
 			</NavItem>
 		</Nav>

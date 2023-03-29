@@ -16,11 +16,12 @@ function TrendingProducts() {
 			<h4>Here are some of our most favourite items</h4>
 			{trendList ? (
 				<div className='container '>
-					<Row md='4' className='trend_container m-1 p-1'>
+					<Row md='4' className='trend_container '>
 						{trendList.map((trend, index) => {
 							return (
-								<Col sm='2' className='product p-3' key={index}>
+								<Col sm='2' className='product' key={index}>
 									<ProductComponent key={index} product={trend} />
+									<img src='../imgs/special.png' className='special' />
 								</Col>
 							);
 						})}

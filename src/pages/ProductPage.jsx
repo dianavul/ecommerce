@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
+
 import { Spinner, Input, Row, Button, Badge } from "reactstrap";
 import ProductComponent from "../components/ProductComponent";
 import "./ProductPage.style.css";
 function ProductPage() {
 	const [prodList, setProdList] = useState(null);
 	const [categList, setCategList] = useState(null);
-
 	const [textInput, setTextInput] = useState("");
 	const [selectedCategory, setSelectedCategory] = useState(null);
 	useEffect(() => {
-		fetch(`https://fakestoreapi.com/products`)
+		fetch(`https://fakestoreapi.com/products/`)
 			.then((res) => res.json())
 			.then((prodListAPI) => setProdList(prodListAPI));
 		fetch(`https://fakestoreapi.com/products/categories`)
@@ -28,16 +28,15 @@ function ProductPage() {
 					<div
 						className='list p-5 d-flex flex-column '
 						style={{
-							marginRight: "15px",
 							backgroundImage:
 								"url(" +
-								"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiWxxWHcqAO1-Dj9f1H93ZKSSOBOjvWtEZmr8IZat9cvx2xxr7T6LNJokzpaPh1LbZ9c4&usqp=CAU" +
+								"https://img.freepik.com/free-photo/three-shopping-bags_23-2147696409.jpg?w=826&t=st=1680003640~exp=1680004240~hmac=145d8145fb2cdf066dfa2f58585b837315fc1fda66fbd895130def9d044451fe" +
 								")",
 							backgroundPosition: "center",
 							backgroundSize: "cover",
 							backgroundRepeat: "no-repeat",
 						}}>
-						<h2>Categories</h2>
+						<h2 style={{ color: "grey" }}>Categories</h2>
 						{categList.map((categ, index) => {
 							return (
 								<Badge
@@ -77,14 +76,14 @@ function ProductPage() {
 						style={{
 							backgroundImage:
 								"url(" +
-								"https://as1.ftcdn.net/v2/jpg/05/14/91/82/1000_F_514918235_7tBlwu9uE5KreiWQty4thANgDRlRebpy.jpg" +
+								"https://img.freepik.com/free-photo/colourful-packets-decorated-leaves_23-2147955455.jpg?w=1380&t=st=1680003582~exp=1680004182~hmac=cfc7955c2da443209cc680581ec3cb7ac41064eeb19fff890c25ffdcb15ed6dd" +
 								")",
 							backgroundPosition: "center",
 							backgroundSize: "cover",
-							backgroundRepeat: "no-repeat",
+							backgroundRepeat: "repeat",
 							width: "100vw",
 						}}>
-						<div className='searchbtn w-75'>
+						<div className='searchbtn '>
 							<Input
 								type='text'
 								placeholder='Search...'

@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { MDBTable, MDBTableHead, MDBTableBody } from "mdb-react-ui-kit";
+import { MDBTable, MDBTableBody } from "mdb-react-ui-kit";
 import { Button } from "reactstrap";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
-import ProductComponent from "../components/ProductComponent";
 import { Link } from "react-router-dom";
 import "./WishList.style.css";
 
@@ -13,7 +12,6 @@ function WishlistPage() {
 		const prodsString = localStorage.getItem("prods");
 		if (prodsString !== null) {
 			const prods = JSON.parse(prodsString);
-			console.log("prods", prods);
 			setWishListProducts(prods);
 		}
 	}, []);
@@ -58,7 +56,7 @@ function WishlistPage() {
 				)}
 			</div>
 
-			<MDBTable>
+			<MDBTable bordered style={{ textAlign: "center" }}>
 				<MDBTableBody>
 					{wishListProducts.map((prod, index) => {
 						return (
@@ -69,15 +67,15 @@ function WishlistPage() {
 										alt='Card cap'
 										src={`${prod.image}`}
 										style={{
-											width: "70px",
-											height: "70px",
+											width: "90px",
+											height: "90px",
 											padding: "0",
 											margin: "0",
 										}}
 										className='p-1'
 									/>
 								</td>
-								<td className='titlu_prod'>{prod.title}</td>
+								<td className='titlu_prod '>{prod.title}</td>
 								<td>{prod.price}$</td>
 								<td className='p-0'>
 									<Button
@@ -86,7 +84,7 @@ function WishlistPage() {
 										onClick={() => {
 											onDelete(prod.id);
 										}}>
-										DELETE
+										REMOVE
 									</Button>
 								</td>
 							</tr>
@@ -98,7 +96,7 @@ function WishlistPage() {
 				<div className='d-flex p-0'>
 					<hr></hr>
 					<h3 className='col-8 total'>Total:</h3>
-					<h3>${productPrice}</h3>
+					<h3>${productPrice.toFixed(2)}</h3>
 				</div>
 			)}
 		</>

@@ -1,10 +1,7 @@
 import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import { Button } from "reactstrap";
-import ProductPage from "../pages/ProductPage";
 import "./Carou.style.css";
-import Category from "./Category";
-import TrendingProducts from "./TrendingProducts";
 
 function Carou() {
 	const carouStyle = {
@@ -21,7 +18,7 @@ function Carou() {
 					fade
 					style={carouStyle}>
 					<MDBCarouselItem
-						className='w-100 '
+						className='w-100'
 						itemId={1}
 						src={`https://picsum.photos/1125/497?random=` + 1}
 						alt='...'>

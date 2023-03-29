@@ -69,8 +69,6 @@ function ProductComponent({ product }) {
 
 					<CardBody style={cardStyle}>
 						<CardText>{product.price}$</CardText>
-						<CardText>{product.category}</CardText>
-
 						<Button
 							style={cartStyle}
 							onClick={() => {

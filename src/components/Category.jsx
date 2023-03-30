@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Spinner, Input, Row, Button, Badge } from "reactstrap";
+import { Spinner } from "reactstrap";
 import CategComponent from "../components/CategComponent";
 
 function Category() {

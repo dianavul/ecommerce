@@ -1,4 +1,4 @@
-import { Card, CardFooter, NavItem, NavLink, Nav } from "reactstrap";
+import { Nav } from "reactstrap";
 
 import {
 	FaFacebookSquare,

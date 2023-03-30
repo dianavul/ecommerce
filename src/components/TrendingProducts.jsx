@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductComponent from "./ProductComponent";
 import { Spinner, Col, Row } from "reactstrap";
-import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
 import "./TrendingProducts.style.css";
 function TrendingProducts() {
 	const [trendList, setTrendList] = useState(null);
